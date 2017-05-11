@@ -9,7 +9,7 @@ def fibonacci_iterative(index):
     prevprev = 0
     prev = 1
     fibonacci_sum = 0
-    for i in range(1,index-1):
+    for i in range(index-1):
       fibonacci_sum = prevprev + prev
       prevprev = prev
       prev = fibonacci_sum
