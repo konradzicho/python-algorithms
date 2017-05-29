@@ -13,7 +13,7 @@ def merge(list1, list2):
 
 ###################################################
 
-def sort_merge(list1):
+def merge_sort(list1):
   new_list = []
   for i in range (len(list1)):
     new_list.append([list1[i]])
@@ -26,7 +26,7 @@ def sort_merge(list1):
     return []
  
 ####################################################
-print([0, 1, 2, 4, 5, 6, 7, 8] == sort_merge([2,5,8,0,1,4,6,7]))
-print([] == sort_merge([]))
-print([1] == sort_merge([1]))
-print([0, 2, 4, 6, 8, 10] == sort_merge([10, 8, 6, 4, 2, 0]))
+print([0, 1, 2, 4, 5, 6, 7, 8] == merge_sort([2,5,8,0,1,4,6,7]))
+print([] == merge_sort([]))
+print([1] == merge_sort([1]))
+print([0, 2, 4, 6, 8, 10] == merge_sort([10, 8, 6, 4, 2, 0]))
