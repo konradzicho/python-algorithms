@@ -1,0 +1,30 @@
+balance = 320000.0
+annualInterestRate = 0.2
+
+new_balance = balance
+monthlyInterestRate= annualInterestRate / 12.0
+lowerBound = balance / 12
+upperBound = (balance * (1 + monthlyInterestRate)**12) / 12.0
+
+fixedMonthlyPayment = 0
+
+monthlyUnpaidBalance = 0.0
+updatedBalanceEachMonth = 0.0
+
+while abs(new_balance) > 0.01:
+  new_balance = balance
+  fixedMonthlyPayment = (lowerBound + upperBound)/2
+  
+  for index in range(0,12):
+    monthlyUnpaidBalance = new_balance - fixedMonthlyPayment
+
+    new_balance = monthlyUnpaidBalance + (monthlyInterestRate *     monthlyUnpaidBalance)
+  
+  if new_balance > 0 :
+    lowerBound = fixedMonthlyPayment
+  elif new_balance < 0 :
+    upperBound =fixedMonthlyPayment
+
+  
+print("Lowest Payment:",end=' ')
+print(round(fixedMonthlyPayment,2))
