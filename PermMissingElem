@@ -1,0 +1,8 @@
+def solution(A):
+    n = len(A)
+    real_sum = sum(A)
+    expected_sum = 0
+    for element in range(1,n+1):
+        expected_sum += element
+    
+    return n + 1 - (real_sum - expected_sum)
