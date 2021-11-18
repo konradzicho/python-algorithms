@@ -1,0 +1,14 @@
+def solution(A):
+    dictionary_for_counting = {}
+    for element in A:
+        if (element in dictionary_for_counting.keys()):
+            current_state = dictionary_for_counting.get(element)
+            dictionary_for_counting.update({element:current_state+1})
+        else:
+            dictionary_for_counting[element] = 1
+    
+    for key in dictionary_for_counting.keys():
+        if dictionary_for_counting[key]%2 == 0 :
+            pass
+        else:
+            return key
