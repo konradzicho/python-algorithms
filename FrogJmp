@@ -1,0 +1,12 @@
+def solution(X, Y, D):
+    distance = 0
+    if X > Y:
+        distance = X - Y
+    elif X < Y:
+        distance = Y - X
+    else: return 0 
+
+    if distance%D == 0:
+        return int(distance/D)
+    else:
+        return int(distance/D +1)
